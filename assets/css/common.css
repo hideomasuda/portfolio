@@ -1,0 +1,171 @@
+@charset "utf-8";
+
+/* --------------------------------
+        余白、コンテンツ幅
+----------------------------------*/
+.content-wrap {
+  padding: 0 20px;
+}
+.page-size {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* --------------------------------
+            共通設定
+----------------------------------*/
+.font-raleway {
+  font-family: 'Raleway', sans-serif;
+}
+.ta_c {
+  text-align: center;
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+a {
+  transition: .3s;
+}
+a:hover {
+  opacity: .7;
+}
+
+/* --------------------------------
+              Header
+----------------------------------*/
+.header {
+  background: #fff;
+}
+.header .page-size {
+  max-width: 1200px;
+}
+.header-logo {
+  font-size: 40px;
+  font-weight: normal;
+}
+.header-logo a {
+  display: flex;
+  align-items: center;
+}
+.header-logo a .icon {
+  width: 48px;
+}
+.header-logo a:hover .icon {
+  animation: ani_rotate .4s;
+}
+@keyframes ani_rotate {
+  0% {transform: translate(0px, 0px) rotate(15deg)}
+  25% {transform: translate(0px, 0px) rotate(-15deg)}
+  50% {transform: translate(0px, 0px) rotate(20deg)}
+  75% {transform: translate(0px, 0px) rotate(-20deg)}
+  100% {transform: translate(0px, 0px) rotate(0deg)}
+}
+.header .sns-area {
+  align-self: center;
+  gap: 10px;
+}
+.header .sns-area .sns-icon {
+  width: 30px;
+}
+.header-nav {
+  max-width: 500px;
+  margin: 0 auto;
+  font-size: 20px;
+}
+.header-nav li {
+  position: relative;
+  overflow: hidden;
+}
+.header-nav li a {
+  display: block;
+  padding: 5px 0;
+}
+.header-nav li a:hover {
+  opacity: 1;
+}
+.header-nav li::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: #000;
+  transition: .3s;
+}
+.header-nav li:hover::after,
+.header-nav li.active::after {
+  width: 40px;
+}
+/* --------------------------------
+              Footer
+----------------------------------*/
+.footer {
+  color: #fff;
+  background: #000;
+  padding-top: 10px;
+}
+.footer-nav {
+  max-width: 500px;
+  margin: 0 auto 20px;
+}
+.footer-nav li {
+  position: relative;
+  overflow: hidden;
+}
+.footer-nav li a {
+  display: block;
+  padding: 5px 0;
+}
+.footer-nav li a:hover {
+  opacity: 1;
+}
+.footer-nav li::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: .3s;
+}
+.footer-nav li:hover::after,
+.footer-nav li.active::after {
+  width: 40px;
+}
+
+/* --------------------------------
+            セクション
+----------------------------------*/
+.sec-wrap {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background: #fff;
+}
+.sec-wrap:nth-child(odd) {
+  background: #ccc;
+}
+.sec-ttl {
+  font-size: 36px;
+  font-weight: normal;
+  padding-bottom: 10px;
+  margin-bottom: 40px;
+  position: relative;
+}
+.sec-ttl::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 2px;
+  background: #000;
+}
+.sec-read {
+  margin-bottom: 40px;
+}

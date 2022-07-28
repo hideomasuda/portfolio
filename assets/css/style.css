@@ -1,0 +1,108 @@
+@charset "utf-8";
+
+.mv-area {
+}
+
+.service .service-list li {
+  width: 31%;
+}
+.service .service-list li .item-ttl {
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+.service .service-list li .item-ttl span {
+  display: block;
+}
+.service .service-list li .item-ttl .ja {
+  font-size: 24px;
+}
+.service .service-list li .item-ttl .en {
+  font-size: 16px;
+}
+.service .service-list li .img-area {
+  width: 100px;
+  margin: 0 auto 20px;
+}
+.service .service-list li .img-area img {
+  width: 100%;
+}
+
+.works {}
+.works-list {
+  flex-wrap: wrap;
+}
+.works-list li {
+  width: 24%;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.works-list::before {
+  content: "";
+  display: block;
+  width: 24%;
+  height: 0;
+  order: 1;
+}
+.works-list::after {
+  content: "";
+  display: block;
+  width: 24%;
+  height: 0;
+}
+.works-list li a:hover {
+  opacity: 1;
+}
+.works-list li .img-area {
+  position: relative;
+  overflow: hidden;
+}
+.works-list li .img-area::before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+.works-list li .img-area img {
+  position: absolute;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: grayscale(100%);
+  transition: .3s;
+}
+.works-list li:hover .img-area img {
+  filter: grayscale(0);
+  transform: scale(1.2);
+}
+.works-list li .item-detail {
+  position: absolute;
+  width: 100%;
+  bottom: -25%;
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+  background: rgba(0,0,0,0.4);
+  transition: .3s;
+}
+.works-list li:hover .item-detail {
+  bottom: 0;
+}
+
+.about .flex .img-area {
+  width: 25%;
+}
+.about .flex .text-area {
+  width: 70%;
+}
+.about .profile-list li {
+  display: flex;
+  margin-bottom: 10px;
+}
+.about .profile-list li .item-ttl {
+  width: 6em;
+}
+.about .profile-list li .item-text {
+  width: calc(100% - 6em);
+}
