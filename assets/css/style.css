@@ -1,8 +1,119 @@
 @charset "utf-8";
 
+/* -------------------------------------
+                MV
+------------------------------------- */
 .mv-area {
+  height: calc(100vh - 100px);
+  overflow: hidden;
+  position: relative;
+}
+.mv-area .mv-text {
+  position: absolute;
+  top: 50%;
+  left: -50%;
+  transform: translate(-50%, -50%);
+  font-size: 80px;
+  font-weight: normal;
+  color: #fff;
+  padding: 10px 30px;
+  border-top: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  text-shadow: 2px 2px 4px #000;
+  opacity: 0;
+  z-index: 2;
+  transition: .5s;
+}
+.mv-area .mv-text.slidein {
+  opacity: 1;
+  left: 50%;
+}
+.mv-area .mv-text .text-wrap span {
+  opacity: 0;
+}
+.mv-area .mv-text.show .text-wrap span {
+  animation:text_anime_on 1s ease-out forwards;
+}
+@keyframes text_anime_on {
+  0% {opacity:0;}
+  100% {opacity:1;}
 }
 
+.mv-slider {
+  position: relative;
+  height: 100%;
+}
+.mv-slider .slick-arrow {
+  display: none;
+}
+.mv-slider .slick-list,
+.mv-slider .slick-track {
+  height: 100%;
+}
+.mv-slider .slide img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  object-fit: cover;
+  object-position: 50%;
+}
+.mv-area .scroll-down {
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  z-index: 2;
+  padding: 10px 10px 70px;
+  overflow: hidden;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1;
+  text-shadow: 0 0 4px #000;
+}
+.mv-area .scroll-down::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  height: 60px;
+  background: #fff;
+  box-shadow: 0 0 4px #000;
+  animation: sd_animation 2s cubic-bezier(1, 0, 0, 1) infinite;
+}
+@keyframes sd_animation {
+  0% {
+    transform: scale(1, 0);
+    transform-origin: 0 0;
+  }
+  30% {
+    transform: scale(1, 1);
+    transform-origin: 0 0;
+  }
+  70% {
+    transform: scale(1, 1);
+    transform-origin: 0 100%;
+  }
+  100% {
+    transform: scale(1, 0);
+    transform-origin: 0 100%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .mv-area {
+    height: calc(100vh - 50px);
+  }
+  .mv-area .mv-text {
+    font-size: 55px;
+    text-align: center;
+    line-height: 1.2;
+  }
+}
+
+/* -------------------------------------
+                Service
+------------------------------------- */
 .service .service-list li {
   width: 31%;
 }
@@ -26,8 +137,47 @@
 .service .service-list li .img-area img {
   width: 100%;
 }
+.marker {
+  padding-bottom: .15em;
+  background: linear-gradient(rgba(231, 76, 60, .3), rgba(231, 76, 60, .3)) 0 100% / 0 40% no-repeat;
+  transition: 1s;
+  text-decoration: none;
+}
+.marker.active {
+  background-size: 100% 40%;
+}
+@media screen and (max-width: 767px) {
+  .service-list {
+    flex-direction: column;
+  }
+  .service .service-list li {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  .service .service-list li:last-of-type {
+    margin-bottom: 0;
+  }
+  .service .service-list li .item-ttl {
+    margin-bottom: 10px;
+  }
+  .service .service-list li .item-ttl .ja {
+    font-size: 20px;
+  }
+  .service .service-list li .item-ttl .en {
+    font-size: 14px;
+  }
+  .service .service-list li .img-area {
+    margin-bottom: 10px;
+  }
+  .service .service-list li .text {
+    max-width: 450px;
+    margin: 0 auto;
+  }
+}
 
-.works {}
+/* -------------------------------------
+                Works
+------------------------------------- */
 .works-list {
   flex-wrap: wrap;
 }
@@ -89,7 +239,19 @@
 .works-list li:hover .item-detail {
   bottom: 0;
 }
+@media screen and (max-width: 767px) {
+  .works-list::before,
+  .works-list::after {
+    content: none;
+  }
+  .works-list li {
+    width: 49%;
+  }
+}
 
+/* -------------------------------------
+                About
+------------------------------------- */
 .about .flex .img-area {
   width: 25%;
 }
@@ -105,4 +267,138 @@
 }
 .about .profile-list li .item-text {
   width: calc(100% - 6em);
+}
+@media screen and (max-width: 767px) {
+  .about .flex {
+    flex-direction: column;
+  }
+  .about .flex .img-area {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .about .flex .text-area {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+/* -------------------------------------
+                blog
+------------------------------------- */
+.blog-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.blog-list li {
+  width: 48%;
+  margin-bottom: 40px;
+}
+.blog-list li a {
+  display: flex;
+  justify-content: space-between;
+}
+.blog-list .img-area {
+  position: relative;
+  width: 32%;
+  overflow: hidden;
+}
+.blog-list .img-area::before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+.blog-list .img-area img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+.blog-list .text-area {
+  width: 65%;
+}
+.blog-list .text-area .ttl {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.blog-list .text-area .desc {
+  margin-bottom: 5px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.blog-list .text-area .date-area {
+  font-size: 14px;
+}
+@media screen and (max-width: 767px) {
+  .blog-list li {
+    width: 100%;
+  }
+  .blog-list .text-area .ttl {
+    font-size: 16px;
+  }
+  .blog-list .text-area .desc {
+    font-size: 14px;
+  }
+  .blog-list .text-area .date-area {
+    font-size: 12px;
+  }
+}
+
+/* -------------------------------------
+                Contact
+------------------------------------- */
+.contact form {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.contact label {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+.contact .input-ttl {
+  font-size: 18px;
+  width: 15em;
+}
+.contact label input,
+.contact label textarea {
+  width: 100%;
+}
+.contact label textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.contact button {
+  display: block;
+  font-size: 20px;
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 5px 15px;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: .3s;
+}
+.contact button:hover {
+  background: #000;
+  color: #fff;
+}
+@media screen and (max-width: 767px) {
+  .contact .input-ttl {
+    font-size: 16px;
+    width: 17em;
+  }
+  .contact button {
+    font-size: 18px;
+  }
 }

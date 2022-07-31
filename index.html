@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hideo's Portfolio</title>
   <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/slick/slick.css">
+  <link rel="stylesheet" href="assets/css/slick/slick-theme.css">
   <link rel="stylesheet" href="assets/css/common.css">
   <link rel="stylesheet" href="assets/css/style.css">
 
@@ -13,6 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+  <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
   <header class="header content-wrap">
@@ -31,6 +34,11 @@
           <a href="" class="sns-icon icon-fb">
             <img src="assets/img/icon_fb.gif" alt="">
           </a>
+        </div>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
       </div>
       <ul class="header-nav flex font-raleway">
@@ -55,7 +63,24 @@
 
   <main class="top-page">
     <div class="mv-area">
-      <img src="assets/img/mv.jpg" alt="">
+      <h2 class="mv-text font-raleway">
+        <span class="text-wrap">Hideo's Portfolio</span>
+      </h2>
+      <div class="mv-slider">
+        <div class="slide">
+          <img src="assets/img/mv01.png" alt="">
+        </div>
+        <div class="slide">
+          <img src="assets/img/mv02.png" alt="">
+        </div>
+        <div class="slide">
+          <img src="assets/img/mv03.png" alt="">
+        </div>
+        <div class="slide">
+          <img src="assets/img/mv04.png" alt="">
+        </div>
+      </div>
+      <span class="scroll-down font-raleway">Scroll</span>
     </div>
 
     <section id="sec01" class="service sec-wrap">
@@ -71,17 +96,7 @@
               <div class="img-area">
                 <img src="assets/img/service_img01.svg" alt="">
               </div>
-              <p class="text">お客様の要望をヒアリングし、現状の問題点を洗い出し、効果的なプランを作成いたします。制作ではデザインに入る前の事前の準備が特に重要になります。何が必要で何が必要でないのかを判断し、費用対効果の高いWebサイトを作るための土台を作ります。</p>
-            </li>
-            <li>
-              <h3 class="item-ttl ta_c">
-                <span class="ja">デザイン</span>
-                <span class="en font-raleway">Design</span>
-              </h3>
-              <div class="img-area">
-                <img src="assets/img/service_img02.svg" alt="">
-              </div>
-              <p class="text">ヒアリングに基づいたプランに沿って、デザインを作成いたします。人の使うものであることを常に意識して、使う人が迷わない、目的を達成できるデザインを心がけています。インターフェースの重要性が増す中でデザインの役割を理解し、そのプランに最適な提案をさせていただきます。</p>
+              <p class="text">Webサイト制作ではデザイン段階に入る前の準備が特に重要になります。お客様のご要望をヒアリングし、理想のWebサイトを作るための<span class="marker">最適なプランをご提案</span>致します。</p>
             </li>
             <li>
               <h3 class="item-ttl ta_c">
@@ -91,7 +106,17 @@
               <div class="img-area">
                 <img src="assets/img/service_img03.svg" alt="">
               </div>
-              <p class="text">デザインの意図を理解し、動きや効果を適切に使用することでWebサイトの仕上がりは大きく変わります。スマートフォンサイト、ワードプレスを使用した更新性の高いサイト、Javascriptを使用した動きのあるサイトなど、様々なサイトのコーディングを行っております。</p>
+              <p class="text">ランディングページ（LP）、コーポレートサイト、ワードプレスを使用した更新性の高いサイト、JavaScriptを使用したモダンで動きのあるサイトなど、<span class="marker">レスポンシブ対応はもちろん、様々なWebサイトのコーディング</span>を行っております。</p>
+            </li>
+            <li>
+              <h3 class="item-ttl ta_c">
+                <span class="ja">SEO対策</span>
+                <span class="en font-raleway">SEO Measures</span>
+              </h3>
+              <div class="img-area">
+                <img src="assets/img/service_img04.svg" alt="">
+              </div>
+              <p class="text">SEO対策とは、Webサイトを検索エンジンの検索結果に上位表示させ、流入を増やすための対策です。せっかくデザインやコンテンツが充実したWebサイトであっても閲覧者が少なければ十分な効果を期待できません。状況に合わせた対策をすることで、<span class="marker">Webサイトの検索流入を増加させ目標達成の手助け</span>を致します。</p>
             </li>
           </ul>
         </div>
@@ -107,7 +132,7 @@
             <li>
               <a href="">
                 <div class="img-area">
-                  <img src="assets/img/works_img01.jpg" alt="">
+                  <img src="assets/img/works_img01.png" alt="">
                 </div>
                 <p class="item-detail">2020.07 Coding</p>
               </a>
@@ -115,7 +140,7 @@
             <li>
               <a href="">
                 <div class="img-area">
-                  <img src="assets/img/works_img02.jpg" alt="">
+                  <img src="assets/img/works_img02.png" alt="">
                 </div>
                 <p class="item-detail">2020.10 Coding</p>
               </a>
@@ -123,7 +148,7 @@
             <li>
               <a href="">
                 <div class="img-area">
-                  <img src="assets/img/works_img03.jpg" alt="">
+                  <img src="assets/img/works_img03.png" alt="">
                 </div>
                 <p class="item-detail">2021.05 Coding</p>
               </a>
@@ -131,7 +156,7 @@
             <li>
               <a href="">
                 <div class="img-area">
-                  <img src="assets/img/works_img04.jpg" alt="">
+                  <img src="assets/img/works_img04.png" alt="">
                 </div>
                 <p class="item-detail">2021.07 Coding</p>
               </a>
@@ -139,7 +164,7 @@
             <li>
               <a href="">
                 <div class="img-area">
-                  <img src="assets/img/works_img05.jpg" alt="">
+                  <img src="assets/img/works_img05.png" alt="">
                 </div>
                 <p class="item-detail">2022.07 Coding</p>
               </a>
@@ -147,7 +172,7 @@
             <li>
               <a href="">
                 <div class="img-area">
-                  <img src="assets/img/works_img05.jpg" alt="">
+                  <img src="assets/img/works_img01.png" alt="">
                 </div>
                 <p class="item-detail">2022.07 Coding</p>
               </a>
@@ -156,6 +181,7 @@
         </div>
       </div>
     </section>
+
     <section id="sec03" class="about sec-wrap">
       <div class="content-wrap">
         <div class="page-size">
@@ -163,7 +189,7 @@
           <!-- <p class="sec-read ta_c">自己紹介</p> -->
           <div class="flex">
             <div class="img-area">
-              <img src="assets/img/profile.jpg" alt="">
+              <img src="assets/img/profile.png" alt="">
             </div>
             <div class="text-area">
               <ul class="profile-list">
@@ -205,41 +231,117 @@
         </div>
       </div>
     </section>
+
     <section id="sec04" class="blog sec-wrap">
       <div class="content-wrap">
         <div class="page-size">
           <h2 class="sec-ttl ta_c font-raleway">Blog</h2>
-          <!-- <p class="sec-read ta_c">自己紹介</p> -->
+          <p class="sec-read ta_c">ただいま投稿機能の準備中につき、ダミーの投稿を使用しています。</p>
+          <ul class="blog-list">
+            <li>
+              <a href="">
+                <div class="img-area">
+                  <img src="assets/img/works_img01.png" alt="">
+                </div>
+                <div class="text-area">
+                  <div class="ttl">記事タイトル記事タイトル記事タイトル記事タイトル記事タイトル記事タイトル記事タイトル記事タイトル記事タイトル記事タイトル</div>
+                  <div class="desc">ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト。ダミーテキスト。ダミーテキスト。</div>
+                  <div class="date-area">投稿日：<span class="date">2022.07.29</span></div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <div class="img-area">
+                  <img src="assets/img/works_img02.png" alt="">
+                </div>
+                <div class="text-area">
+                  <div class="ttl">記事タイトル記事タイトル記事タイトル記事タイトル記事タイトル</div>
+                  <div class="desc">ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト。</div>
+                  <div class="date-area">投稿日：<span class="date">2022.07.20</span></div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <div class="img-area">
+                  <img src="assets/img/works_img03.png" alt="">
+                </div>
+                <div class="text-area">
+                  <div class="ttl">記事タイトル記事タイトル記事タイトル記事タイトル記事タイトル</div>
+                  <div class="desc">ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト。</div>
+                  <div class="date-area">投稿日：<span class="date">2022.07.19</span></div>
+                </div>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
 
+    <section id="sec05" class="contact sec-wrap">
+      <div class="content-wrap">
+        <div class="page-size">
+          <h2 class="sec-ttl ta_c font-raleway">Contact</h2>
+          <p class="sec-read ta_c">ご要望やご質問がございましたら、下記のフォームよりお気軽にお問合せください。</p>
+          <form action="https://formspree.io/f/mlevrjrw" method="POST">
+            <label>
+              <span class="input-ttl">お名前：</span>
+              <input type="text" name="fullname">
+            </label>
+            <label>
+              <span class="input-ttl">メールアドレス：</span>
+              <input type="email" name="email">
+            </label>
+            <label>
+              <span class="input-ttl">お問い合わせ内容：</span>
+              <textarea name="message"></textarea>
+            </label>
+            <button type="submit">送信</button>
+          </form>
+        </div>
+      </div>
+
+    </section>
+
   </main>
+
+  <div class="page-top">
+    <a href="#">
+      <img src="assets/img/pagetop_icon.svg" alt="">
+      <span>Page Top</span>
+    </a>
+  </div>
 
   <footer class="footer">
     <div class="content-wrap">
       <div class="page-size">
         <ul class="footer-nav flex font-raleway">
           <li>
-            <a href="/about/">About</a>
+            <a href="#sec01">Service</a>
           </li>
           <li>
-            <a href="/works/">Works</a>
+            <a href="#sec02">Works</a>
           </li>
           <li>
-            <a href="/blog/">Blog</a>
+            <a href="#sec03">About</a>
           </li>
           <li>
-            <a href="/contact/">Contact</a>
+            <a href="#sec04">Blog</a>
+          </li>
+          <li>
+            <a href="#sec05">Contact</a>
           </li>
         </ul>
         <p class="copyright ta_c font-raleway">&copy;copyright 2020 - 2022</p>
       </div>
     </div>
   </footer>
+
 </body>
 
 <!-- js -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="assets/js/slick/slick.min.js"></script>
 <script src="assets/js/common.js"></script>
 </html>

@@ -14,6 +14,10 @@
 /* --------------------------------
             共通設定
 ----------------------------------*/
+body {
+  position: relative;
+  padding-top: 100px;
+}
 .font-raleway {
   font-family: 'Raleway', sans-serif;
 }
@@ -30,12 +34,24 @@ a {
 a:hover {
   opacity: .7;
 }
+@media screen and (max-width: 767px) {
+  body {
+    padding-top: 50px;
+  }
+}
 
 /* --------------------------------
               Header
 ----------------------------------*/
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
   background: #fff;
+  box-shadow: 0 0 6px #999;
+  z-index: 10;
 }
 .header .page-size {
   max-width: 1200px;
@@ -68,6 +84,41 @@ a:hover {
 .header .sns-area .sns-icon {
   width: 30px;
 }
+.hamburger {
+  position: relative;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+.hamburger span {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: #000;
+  transition: .3s;
+}
+.hamburger span:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.hamburger span:last-child {
+  top: auto;
+  bottom: 0;
+}
+.hamburger.active span:first-child {
+  top: 50%;
+  transform: rotate(135deg);
+}
+.hamburger.active span:nth-child(2) {
+  transform: translateY(-50%) scale(0);
+}
+.hamburger.active span:last-child {
+  top: 50%;
+  transform: rotate(-135deg);
+}
 .header-nav {
   max-width: 500px;
   margin: 0 auto;
@@ -99,6 +150,59 @@ a:hover {
 .header-nav li.active::after {
   width: 40px;
 }
+@media screen and (max-width: 767px) {
+  .header {
+    height: 50px;
+  }
+  .header .page-size {
+    height: 100%;
+  }
+  .header .page-size > .flex:first-child {
+    height: 100%;
+    align-items: center;
+  }
+  .header-logo {
+    font-size: 26px;
+  }
+  .header-logo a .icon {
+    width: 40px;
+  }
+  .header .sns-area {
+    display: none;
+  }
+  .header-nav {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    max-width: 100%;
+    width: 100%;
+    height: 0;
+    justify-content: flex-start;
+    flex-direction: column;
+    background: rgba(0,0,0,0.9);
+    color: #fff;
+    /* padding: 20px 10px 30px; */
+    padding: 0;
+    /* box-shadow: 0 2px 3px #999; */
+    overflow: hidden;
+    transition: .4s ease;
+  }
+  .header-nav.active {
+    height: auto;
+    padding: 20px 10px 30px;
+  }
+  .header-nav li {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .header-nav li:last-of-type {
+    margin-bottom: 0;
+  }
+  .header-nav li::after {
+    background: #fff;
+  }
+}
+
 /* --------------------------------
               Footer
 ----------------------------------*/
@@ -137,6 +241,19 @@ a:hover {
 .footer-nav li.active::after {
   width: 40px;
 }
+@media screen and (max-width: 767px) {
+  .footer-nav {
+    flex-direction: column;
+    font-size: 18px;
+  }
+  .footer-nav li {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .footer-nav li:last-child {
+    margin-bottom: 0;
+  }
+}
 
 /* --------------------------------
             セクション
@@ -168,4 +285,38 @@ a:hover {
 }
 .sec-read {
   margin-bottom: 40px;
+}
+@media screen and (max-width: 767px) {
+  .sec-ttl {
+    font-size: 30px;
+  }
+}
+/* --------------------------------
+        ページトップボタン
+----------------------------------*/
+.page-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  opacity: 0;
+  transition: padding-bottom .3s, opacity .5s;
+}
+.page-top.show {
+  opacity: 1;
+}
+.page-top:hover {
+  padding-bottom: 10px;
+}
+.page-top a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.page-top a:hover {
+  opacity: 1;
+}
+.page-top a span {
+  display: block;
+  font-size: 12px;
+  text-align: center;
 }
