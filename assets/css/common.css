@@ -85,6 +85,7 @@ a:hover {
   width: 30px;
 }
 .hamburger {
+  display: none;
   position: relative;
   width: 30px;
   height: 20px;
@@ -169,6 +170,9 @@ a:hover {
   }
   .header .sns-area {
     display: none;
+  }
+  .hamburger {
+    display: block;
   }
   .header-nav {
     position: fixed;
