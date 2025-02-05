@@ -324,3 +324,8 @@ a:hover {
   font-size: 12px;
   text-align: center;
 }
+
+.link {
+  text-decoration: underline;
+  color: #ff6200;
+}
