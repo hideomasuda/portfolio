@@ -59,6 +59,7 @@ a:hover {
 .header-logo {
   font-size: 40px;
   font-weight: normal;
+  text-shadow: 2px 4px 5px rgba(0,0,0,0.3);
 }
 .header-logo a {
   display: flex;
@@ -268,7 +269,7 @@ a:hover {
   background: #fff;
 }
 .sec-wrap:nth-child(odd) {
-  background: #ccc;
+  background: #efefef;
 }
 .sec-ttl {
   font-size: 36px;
